@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  back:
+    image: alko_app
+    volumes:
+      - .:/app/
+    ports:
+        - "8444:9001"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
+    command: gunicorn --workers 1 --bind 0.0.0.0:9001 core.main.wsgi:application
+    #command: python manage.py runserver
+    #command: type -a gunicorn

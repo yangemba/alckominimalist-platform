@@ -1,0 +1,11 @@
+**/Dockerfile
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.cache
+**/*.log
+**/venv
+**/.venv
+**/.djenv
+**/.git
